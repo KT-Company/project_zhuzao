@@ -1,20 +1,20 @@
-<script setup lang="ts">
-import Scene from "@/views/Scene.vue";
+<script setup>
 import { onMounted } from "vue";
-
 import autofit from "autofit.js";
 onMounted(() => {
-  autofit.init({
-    dh: 4573,
-    dw: 2179,
-     el: "#app-main",
-     resize:true
-  })
-}),
+  autofit.init(
+    {
+      dw: 4573,
+      dh: 2179,
+      el: "#app-main",
+      resize: true,
+    },
+    false
+  );
+});
 </script>
 
 <template>
-  <!--  <Scene/>-->
   <div id="app-main">
     <router-view></router-view>
   </div>
@@ -32,7 +32,6 @@ onMounted(() => {
 :global(#app) {
   width: 100vw;
   height: 100vh;
-  background-color: #999;
   pointer-events: none;
 }
 </style>

@@ -1,13 +1,10 @@
-import { createRouter, createWebHashHistory } from "vue-router"
-import Home from "@/views/Home.vue"
+import { createRouter, createWebHashHistory } from "vue-router";
 
 const routes = [
-  { path: "/", component: Home },
-]
-
-
+  { path: "/", component: () => import("@/views/TexturePage.vue") },
+];
 
 export default createRouter({
   routes,
-  history: createWebHashHistory()
-})
+  history: createWebHashHistory(),
+});

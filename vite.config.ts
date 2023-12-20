@@ -22,12 +22,30 @@ export default defineConfig({
       },
     },
   },
-  build:{
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      }
-    }
-  }
+  build: {
+    rollupOptions: {
+      input: {
+        index: path.resolve(__dirname, "index.html"),
+      },
+      output: {
+        chunkFileNames: "static/js/[name]-[hash].js",
+        entryFileNames: "static/js/[name]-[hash].js",
+        assetFileNames: (assetInfo) => {
+          if (
+            assetInfo.type === "asset" &&
+            /\.(jpe?g|png|gif|svg|webp)$/i.test(assetInfo.name)
+          ) {
+            return "static/img/[name].[hash][ext]";
+          }
+          if (
+            assetInfo.type === "asset" &&
+            /\.(ttf|woff|woff2|eot)$/i.test(assetInfo.name)
+          ) {
+            return "static/fonts/[name].[hash][ext]";
+          }
+          return "static/[ext]/name1-[hash].[ext]";
+        },
+      },
+    },
+  },
 });
