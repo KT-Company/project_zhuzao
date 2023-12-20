@@ -16,7 +16,7 @@ const pageIndex = ref(1);
     ></div>
     <div
       class="w-[63px] h-[89px] bg-[url('@/assets/img/2.webp')] cus-bg absolute bottom-[85px] right-[947px] cursor-pointer"
-      @click="pageIndex = pageIndex === 1 ? 3 : --pageIndex"
+      @click="pageIndex = pageIndex === 1 ? 2 : --pageIndex"
     ></div>
     <div
       class="absolute bottom-[96px] right-[793px] text-[#68a4e6] text-[50px] font-black"
@@ -25,7 +25,7 @@ const pageIndex = ref(1);
     </div>
     <div
       class="w-[63px] h-[89px] bg-[url('@/assets/img/3.webp')] cus-bg absolute bottom-[85px] right-[599px] cursor-pointer"
-      @click="pageIndex = pageIndex === 3 ? 1 : ++pageIndex"
+      @click="pageIndex = pageIndex === 2 ? 1 : ++pageIndex"
     ></div>
   </div>
 </template>
