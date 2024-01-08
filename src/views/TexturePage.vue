@@ -9,6 +9,10 @@ const pageIndex = ref(1);
     class="w-full h-full bg-[url('@/assets/img/1.webp')] cus-bg relative pointer-events-auto"
   >
     <div
+      class="w-[64px] h-[64px] bg-[url('@/assets/img/exit.webp')] cus-bg absolute top-[54px] right-[78px] cursor-pointer"
+      @click="ue.interface.exit()"
+    ></div>
+    <div
       class="w-[1537px] h-[1749px] cus-bg absolute top-[221px] right-[72px]"
       :style="{
         backgroundImage: `url(${getImg('pageView-' + pageIndex + '.webp')})`,
